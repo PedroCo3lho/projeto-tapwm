@@ -26,7 +26,7 @@ const ProductsPage = () => {
     const doc = new jsPDF();
 
     doc.text('Lista de Produtos', 20, 10);
-    
+
     const tableColumn = ['Nome', 'Quantidade', 'Preço'];
     const tableRows: (string | number)[][] = [];
 
@@ -51,31 +51,38 @@ const ProductsPage = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl mb-4">Lista de Produtos</h1>
+      <h1 className="text-2xl mb-4 font-bold text-gray-700">Lista de Produtos</h1>
       <button
         onClick={exportPDF}
-        className="mb-4 bg-blue-500 text-white py-2 px-4 rounded"
+        className="mb-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors"
       >
         Exportar para PDF
       </button>
-      <table className="min-w-full bg-white border border-gray-300">
-        <thead>
-          <tr>
-            <th className="border-b border-r py-2 text-left text-black">Nome</th>
-            <th className="border-b border-r py-2 text-left text-black">Quantidade</th>
-            <th className="border-b py-2 text-left text-black">Preço</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-            <tr key={product.id} className="border-b text-center">
-              <td className="py-2 border-r text-black">{product.nome_produto}</td>
-              <td className="py-2 border-r text-black">{product.qtd_produto}</td>
-              <td className="py-2 text-black">R$ {product.preco_produto.toFixed(2)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="overflow-x-auto">
+        <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+          <div className="table w-full bg-white">
+            <div className="table-header-group">
+              <div className="table-row bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <div className="table-cell text-left font-bold py-3 px-6">Nome</div>
+                <div className="table-cell text-left font-bold py-3 px-6">Quantidade</div>
+                <div className="table-cell text-left font-bold py-3 px-6">Preço</div>
+              </div>
+            </div>
+            <div className="table-row-group">
+              {products.map((product) => (
+                <div
+                  key={product.id}
+                  className="table-row bg-white text-gray-700 hover:bg-gray-100 transition-colors"
+                >
+                  <div className="table-cell py-3 px-6 border-b">{product.nome_produto}</div>
+                  <div className="table-cell py-3 px-6 border-b">{product.qtd_produto}</div>
+                  <div className="table-cell py-3 px-6 border-b">R$ {product.preco_produto.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
