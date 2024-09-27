@@ -23,7 +23,7 @@ const AddProductPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 w-2/5">
       <h1 className="text-2xl mb-4">Adicionar Produto</h1>
       <label>Nome do Produto</label>
       <input
@@ -31,7 +31,7 @@ const AddProductPage = () => {
         value={nomeProduto}
         onChange={(e) => setNomeProduto(e.target.value)}
         placeholder="Nome do Produto"
-        className="border p-2 mb-2 w-full text-black"
+        className="border p-2 mb-2 w-full text-black rounded-lg"
       />
       <label>Quantidade</label>
       <input
@@ -39,7 +39,7 @@ const AddProductPage = () => {
         value={qtdProduto}
         onChange={(e) => setQtdProduto(Number(e.target.value))}
         placeholder="Quantidade"
-        className="border p-2 mb-2 w-full text-black"
+        className="border p-2 mb-2 w-full text-black rounded-lg"
       />
       <label>Preço</label>
       <input
@@ -48,9 +48,9 @@ const AddProductPage = () => {
         value={precoProduto}
         onChange={(e) => setPrecoProduto(Number(e.target.value))}
         placeholder="Preço"
-        className="border p-2 mb-2 w-full text-black"
+        className="border p-2 mb-2 w-full text-black rounded-lg"
       />
-      <button onClick={addProduct} className="bg-green-500 text-white p-2">
+      <button onClick={addProduct} className="bg-green-500 text-white p-2 rounded-lg">
         Adicionar Produto
       </button>
     </div>

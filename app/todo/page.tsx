@@ -57,16 +57,16 @@ const TodoPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 w-3/5">
       <h1 className="text-2xl mb-4">Lista de Compras</h1>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Adicionar item"
-        className="border p-2 mr-2"
+        className="border p-2 mr-2 text-black rounded-lg mb-2"
       />
-      <button onClick={addTodo} className="bg-blue-500 text-white p-2">Adicionar</button>
+      <button onClick={addTodo} className="bg-blue-500 text-white p-2 rounded-lg">Adicionar</button>
 
       <ul className="space-y-3">
         {todos.length === 0 ? (

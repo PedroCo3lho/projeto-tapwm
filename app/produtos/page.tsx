@@ -50,7 +50,7 @@ const ProductsPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-2/5 w-3/5">
       <h1 className="text-2xl mb-4 font-bold text-gray-700">Lista de Produtos</h1>
       <button
         onClick={exportPDF}
