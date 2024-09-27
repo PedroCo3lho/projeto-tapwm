@@ -40,7 +40,7 @@ const TodoPage = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Adicionar item"
-        className="border p-2 mr-2"
+        className="border p-2 mr-2 text-black"
       />
       <button onClick={addTodo} className="bg-blue-500 text-white p-2">Adicionar</button>
 
